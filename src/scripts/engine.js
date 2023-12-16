@@ -45,7 +45,8 @@ function handleClick() {
 }
 
 function checkMatch() {
-  if (openCards[0].innerHTML === openCards[1].innerHTML) {
+  if (openCards[0] && openCards[1]) {
+    if (openCards[0].innerHTML === openCards[1].innerHTML) {
     openCards[0].classList.add("boxMatch");
     openCards[1].classList.add("boxMatch");
   } else {
@@ -53,9 +54,10 @@ function checkMatch() {
     openCards[1].classList.remove("boxOpen");
   }
   
-  openCards = [];
+    openCards = [];
   
-  if (document.querySelectorAll(".boxMatch").length === emojis.length) {
-    alert("Voce venceu!");
+    if (document.querySelectorAll(".boxMatch").length === emojis.length) {
+      alert("Voce venceu!");
+    }
   }
 }
